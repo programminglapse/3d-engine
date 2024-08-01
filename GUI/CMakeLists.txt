@@ -4,12 +4,14 @@ project( EngineGUI )
 set( CMAKE_CXX_STANDARD 17 )
 set( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} )
 
-include_directories( "include/" )
+set( INCLUDE_DIRS
+	include/ )
 
-set( MAIN_SRC_FILE
+include_directories( ${INCLUDE_DIRS} )
+
+set( SRC_FILES
+	src/CApplication.cpp
 	src/main.cpp )
-
-file( GLOB SRC_FILES ${MAIN_SRC_FILE} )
 
 add_executable( EngineGUI ${SRC_FILES} )
 target_link_libraries( EngineGUI Engine )

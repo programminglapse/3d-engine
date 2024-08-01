@@ -4,14 +4,16 @@ project( Engine )
 set( CMAKE_CXX_STANDARD 17 )
 set( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} )
 
-include_directories( "include/" )
+set( INCLUDE_DIRS
+	include/
+	include/Modules/ )
 
-set( MAIN_SRC_FILE
-	src/main.cpp )
-set( GLAD_SRC
-	src/glad/glad.c )
+include_directories( ${INCLUDE_DIRS} )
 
-file( GLOB SRC_FILES ${MAIN_SRC_FILE} ${GLAD_SRC} )
+set( SRC_FILES
+	src/AApplication.cpp
+	src/glad/glad.c
+	src/Modules/CModuleWindow.cpp )
 
 add_library( Engine SHARED ${SRC_FILES} )
 
