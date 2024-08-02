@@ -21,6 +21,8 @@ public:
 	bool PostUpdate() override;
 	bool Clear() override;
 
+	GLFWwindow* GetWindow();
+
 private:
 	GLFWwindow* mWindow;
 	std::string mName;

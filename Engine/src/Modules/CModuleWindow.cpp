@@ -71,6 +71,11 @@ bool CModuleWindow::Clear()
 	return true;
 }
 
+GLFWwindow* CModuleWindow::GetWindow()
+{
+	return mWindow;
+}
+
 } // namespace Engine
 
 namespace

@@ -2,7 +2,6 @@
 #define C_APPLICATION__H
 
 #include "AApplication.h"
-#include "Modules/CModuleWindow.h"
 
 namespace GUI
 {
@@ -13,9 +12,6 @@ public:
 	CApplication();
 
 	void CreateModules() override;
-
-private:
-	Engine::CModuleWindow* mModuleWindow = nullptr;
 };
 
 } // namespace GUI

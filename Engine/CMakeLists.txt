@@ -13,7 +13,8 @@ include_directories( ${INCLUDE_DIRS} )
 set( SRC_FILES
 	src/AApplication.cpp
 	src/glad/glad.c
-	src/Modules/CModuleWindow.cpp )
+	src/Modules/CModuleWindow.cpp
+	src/Modules/CModuleInput.cpp )
 
 add_library( Engine SHARED ${SRC_FILES} )
 

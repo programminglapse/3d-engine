@@ -2,10 +2,12 @@
 
 #include "CApplication.h"
 
+Engine::AApplication* application;
+
 int main()
 {
-	GUI::CApplication application;
-	application.Run();
+	application = new GUI::CApplication();
+	application->Run();
 
 	return 0;
 }
