@@ -14,7 +14,8 @@ set( SRC_FILES
 	src/AApplication.cpp
 	src/glad/glad.c
 	src/Modules/CModuleWindow.cpp
-	src/Modules/CModuleInput.cpp )
+	src/Modules/CModuleInput.cpp
+	src/Modules/CModuleRender.cpp )
 
 add_library( Engine SHARED ${SRC_FILES} )
 

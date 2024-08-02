@@ -10,6 +10,7 @@ namespace Engine
 
 class CModuleWindow;
 class CModuleInput;
+class CModuleRender;
 
 class AApplication
 {
@@ -20,6 +21,7 @@ public:
 
 	CModuleWindow* mModuleWindow = nullptr;
 	CModuleInput* mModuleInput = nullptr;
+	CModuleRender* mModuleRender = nullptr;
 
 protected:
 	std::vector<AModule*> mModules;
