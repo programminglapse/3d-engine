@@ -20,26 +20,16 @@ CModuleWindow::CModuleWindow( const std::string& aName, const int aWidth, const 
 	mWidth( aWidth ),
 	mHeight( aHeight )
 {
+	InitGLFW();
+	mWindow = CreateWindow( mName, mWidth, mHeight );
+	glfwMakeContextCurrent( mWindow );
+	glfwSetFramebufferSizeCallback( mWindow, FramebufferSizeCallback );
+	gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 }
 
 bool CModuleWindow::Init()
 {
-	InitGLFW();
-	mWindow = CreateWindow( mName, mWidth, mHeight );
-
-	if( mWindow == nullptr )
-	{
-		glfwTerminate();
-		return false;
-	}
-
-	glfwMakeContextCurrent( mWindow );
-	glfwSetFramebufferSizeCallback( mWindow, FramebufferSizeCallback );
-
-	if ( !gladLoadGLLoader((GLADloadproc)glfwGetProcAddress) )
-		return false;
-
-	return true;
+	return mWindow != nullptr;
 }
 
 bool CModuleWindow::PreUpdate()

@@ -2,6 +2,8 @@
 #define C_MODULE_RENDER_H
 
 #include "AModule.h"
+#include "CShader.h"
+#include "CTexture.h"
 
 namespace Engine
 {
@@ -9,15 +11,16 @@ namespace Engine
 class CModuleRender : public AModule
 {
 public:
-	CModuleRender() = default;
+	CModuleRender();
 
 	bool Init() override;
 	bool Update() override;
 
 private:
-	unsigned int mShaderProgram = 0;
-	unsigned int mVAO = 0;
-	unsigned int mEBO = 0;
+	CShader mShader;
+	unsigned int mVAO;
+	unsigned int mEBO;
+	CTexture mTexture;
 };
 
 } // namespace Engine

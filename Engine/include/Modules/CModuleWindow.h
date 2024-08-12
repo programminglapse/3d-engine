@@ -24,10 +24,10 @@ public:
 	GLFWwindow* GetWindow();
 
 private:
-	GLFWwindow* mWindow;
 	std::string mName;
 	int mWidth;
 	int mHeight;
+	GLFWwindow* mWindow;
 };
 
 } // namespace Engine

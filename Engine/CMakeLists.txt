@@ -12,10 +12,13 @@ include_directories( ${INCLUDE_DIRS} )
 
 set( SRC_FILES
 	src/AApplication.cpp
+	src/CShader.cpp
+	src/CTexture.cpp
 	src/glad/glad.c
 	src/Modules/CModuleWindow.cpp
 	src/Modules/CModuleInput.cpp
-	src/Modules/CModuleRender.cpp )
+	src/Modules/CModuleRender.cpp
+	src/stb/stb_image.cpp )
 
 add_library( Engine SHARED ${SRC_FILES} )
 
