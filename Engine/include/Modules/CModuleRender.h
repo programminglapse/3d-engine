@@ -16,6 +16,8 @@ public:
 	bool Init() override;
 	bool Update() override;
 
+	const CShader& GetShader() const;
+
 private:
 	CShader mShader;
 	unsigned int mVAO;

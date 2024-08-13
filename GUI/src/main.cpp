@@ -1,5 +1,3 @@
-#include <iostream>
-
 #include "CApplication.h"
 
 Engine::AApplication* application;

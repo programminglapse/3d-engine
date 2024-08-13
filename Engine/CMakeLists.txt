@@ -12,6 +12,7 @@ include_directories( ${INCLUDE_DIRS} )
 
 set( SRC_FILES
 	src/AApplication.cpp
+	src/CCamera.cpp
 	src/CShader.cpp
 	src/CTexture.cpp
 	src/glad/glad.c

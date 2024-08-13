@@ -66,6 +66,16 @@ GLFWwindow* CModuleWindow::GetWindow()
 	return mWindow;
 }
 
+const int CModuleWindow::GetWidth() const
+{
+	return mWidth;
+}
+
+const int CModuleWindow::GetHeight() const
+{
+	return mHeight;
+}
+
 } // namespace Engine
 
 namespace

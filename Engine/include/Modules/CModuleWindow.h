@@ -22,6 +22,8 @@ public:
 	bool Clear() override;
 
 	GLFWwindow* GetWindow();
+	const int GetWidth() const;
+	const int GetHeight() const;
 
 private:
 	std::string mName;

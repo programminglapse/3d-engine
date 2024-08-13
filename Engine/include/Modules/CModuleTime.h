@@ -13,6 +13,8 @@ public:
 
 	bool Update() override;
 
+	const float& GetDeltaTime() const;
+
 private:
 	float mDeltaTime = 0.0f;
 	float mLastTime = 0.0f;

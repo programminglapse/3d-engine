@@ -14,4 +14,9 @@ bool CModuleTime::Update()
 	return true;
 }
 
+const float& CModuleTime::GetDeltaTime() const
+{
+	return mDeltaTime;
+}
+
 } // namespace Engine

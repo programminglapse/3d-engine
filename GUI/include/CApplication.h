@@ -2,6 +2,9 @@
 #define C_APPLICATION__H
 
 #include "AApplication.h"
+#include "CModuleEditorCamera.h"
+
+class CModuleEditorCamera;
 
 namespace GUI
 {
@@ -12,6 +15,8 @@ public:
 	CApplication();
 
 	void CreateModules() override;
+
+	CModuleEditorCamera* mModuleEditorCamera = nullptr;
 };
 
 } // namespace GUI
