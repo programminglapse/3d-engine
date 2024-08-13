@@ -18,6 +18,7 @@ set( SRC_FILES
 	src/Modules/CModuleWindow.cpp
 	src/Modules/CModuleInput.cpp
 	src/Modules/CModuleRender.cpp
+	src/Modules/CModuleTime.cpp
 	src/stb/stb_image.cpp )
 
 add_library( Engine SHARED ${SRC_FILES} )

@@ -11,6 +11,7 @@ namespace Engine
 class CModuleWindow;
 class CModuleInput;
 class CModuleRender;
+class CModuleTime;
 
 class AApplication
 {
@@ -22,6 +23,7 @@ public:
 	CModuleWindow* mModuleWindow = nullptr;
 	CModuleInput* mModuleInput = nullptr;
 	CModuleRender* mModuleRender = nullptr;
+	CModuleTime* mModuleTime = nullptr;
 
 protected:
 	std::vector<AModule*> mModules;
