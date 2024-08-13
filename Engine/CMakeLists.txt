@@ -6,7 +6,8 @@ set( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} )
 
 set( INCLUDE_DIRS
 	include/
-	include/Modules/ )
+	include/Modules/
+	lib )
 
 include_directories( ${INCLUDE_DIRS} )
 
