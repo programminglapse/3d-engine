@@ -15,13 +15,34 @@ namespace Engine
 {
 
 CTexture::CTexture( const std::string& aPath ) :
-	mID( CreateTexture( aPath ) )
+	mID( CreateTexture( aPath ) ),
+	mPath( aPath )
 {
 }
 
 void CTexture::Bind() const
 {
 	glBindTexture( GL_TEXTURE_2D, mID );
+}
+
+const unsigned int& CTexture::GetID() const
+{
+	return mID;
+}
+
+const std::string& CTexture::GetPath() const
+{
+	return mPath;
+}
+
+const std::string& CTexture::GetType() const
+{
+	return mType;
+}
+
+void CTexture::SetType( const std::string& aType )
+{
+	mType = aType;
 }
 
 } // namespace Engine

@@ -4,6 +4,7 @@
 #include "AModule.h"
 #include "CShader.h"
 #include "CTexture.h"
+#include "CModel.h"
 
 namespace Engine
 {
@@ -17,12 +18,14 @@ public:
 	bool Update() override;
 
 	const CShader& GetShader() const;
+	void DrawModel( const CModel& aModel ) const;
 
 private:
 	CShader mShader;
 	unsigned int mVAO;
 	unsigned int mEBO;
 	CTexture mTexture;
+	CModel mModel;
 };
 
 } // namespace Engine

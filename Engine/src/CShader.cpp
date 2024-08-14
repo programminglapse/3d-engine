@@ -2,7 +2,6 @@
 
 #include "glad/glad.h"
 #include <GLFW/glfw3.h>
-#include <iostream>
 
 namespace
 {
@@ -23,10 +22,10 @@ const char *vertexShaderSource = "#version 330 core\n"
 const char *fragmentShaderSource = "#version 330 core\n"
     "out vec4 FragColor;\n"
     "in vec2 TexCoord;\n"
-    "uniform sampler2D texture1;\n"
+    "uniform sampler2D texture_diffuse1;\n"
     "void main()\n"
     "{\n"
-    "   FragColor = texture( texture1, TexCoord );\n"
+    "   FragColor = texture( texture_diffuse1, TexCoord );\n"
     "}\n\0";
 
 unsigned int CreateShader( const GLenum& aShaderType, const char *aShaderSource );
@@ -64,6 +63,11 @@ void CShader::Use() const
 void CShader::SetMat4( const std::string& aName, const glm::mat4& aMat4 ) const
 {
 	glUniformMatrix4fv( glGetUniformLocation( mID, aName.c_str() ), 1, GL_FALSE, &aMat4[0][0]);
+}
+
+void CShader::SetInt( const std::string& aName, int aValue ) const
+{
+	glUniform1i( glGetUniformLocation( mID, aName.c_str() ), aValue );
 }
 
 } // namespace Engine

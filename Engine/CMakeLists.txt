@@ -7,7 +7,7 @@ set( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} )
 set( INCLUDE_DIRS
 	include/
 	include/Modules/
-	lib )
+	lib/assimp/include )
 
 include_directories( ${INCLUDE_DIRS} )
 
@@ -17,6 +17,8 @@ set( SRC_FILES
 	src/CShader.cpp
 	src/CTexture.cpp
 	src/glad/glad.c
+	src/CMesh.cpp
+	src/CModel.cpp
 	src/Modules/CModuleWindow.cpp
 	src/Modules/CModuleInput.cpp
 	src/Modules/CModuleRender.cpp
@@ -25,5 +27,7 @@ set( SRC_FILES
 
 add_library( Engine SHARED ${SRC_FILES} )
 
-target_link_libraries( Engine glfw ${CMAKE_DL_LIBS} )
+add_subdirectory(lib/assimp)
+
+target_link_libraries( Engine glfw assimp ${CMAKE_DL_LIBS} )
 target_include_directories( Engine PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include/ )

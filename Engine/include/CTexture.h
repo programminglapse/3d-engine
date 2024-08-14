@@ -13,8 +13,15 @@ public:
 
 	void Bind() const;
 
+	const unsigned int& GetID() const;
+	const std::string& GetPath() const;
+	const std::string& GetType() const;
+	void SetType( const std::string& aType );
+
 private:
 	unsigned int mID;
+	std::string mPath;
+	std::string mType;
 };
 
 } // namespace Engine

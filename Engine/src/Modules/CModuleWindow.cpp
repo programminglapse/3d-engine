@@ -2,6 +2,7 @@
 
 #include "glad/glad.h"
 #include <GLFW/glfw3.h>
+#include "stb/stb_image.h"
 
 namespace
 {
@@ -25,6 +26,8 @@ CModuleWindow::CModuleWindow( const std::string& aName, const int aWidth, const 
 	glfwMakeContextCurrent( mWindow );
 	glfwSetFramebufferSizeCallback( mWindow, FramebufferSizeCallback );
 	gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+	stbi_set_flip_vertically_on_load( true );
+	glEnable(GL_DEPTH_TEST);
 }
 
 bool CModuleWindow::Init()
@@ -35,7 +38,7 @@ bool CModuleWindow::Init()
 bool CModuleWindow::PreUpdate()
 {
 	glClearColor( 0.2f, 0.3f, 0.3f, 1.0f );
-	glClear( GL_COLOR_BUFFER_BIT );
+	glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
 
 	return true;
 }

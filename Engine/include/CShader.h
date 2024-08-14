@@ -17,6 +17,7 @@ public:
 	bool IsValid() const;
 	void Use() const;
 	void SetMat4( const std::string& aName, const glm::mat4& aMat4 ) const;
+	void SetInt( const std::string& aName, int aValue ) const;
 
 private:
 	unsigned int mID;
